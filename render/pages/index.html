@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh" style="height:100%">
+    <head>
+        <meta charset="utf-8" />
+        <title>MDNotePad</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/editormd.css" />   
+          
+    </head>
+    <body style="height:100%">
+        <div id="layout" style="height:calc(100% - 20px);overflow: hidden;">
+            <div id="test-editormd"></div>
+        </div>
+        <div class="footer">
+            
+            <span class="encode" onselectstart="return false;" id="encode">utf8</span>
+        </div>
+        <div class="chooseEncode" onselectstart="return false;" id="chooseEncode" style="display: none">
+            <ul style="background: white;">
+                <li onclick="changeEncode('utf8')">utf8</li>
+                <li onclick="changeEncode('ascii')">ascii</li>
+                <li onclick="changeEncode('latin1')">latin1</li>
+                <li onclick="changeEncode('utf16le')">utf16le</li>
+            </ul>
+        </div>
+        <script>
+            try{
+                const electron = require('electron');
+                window.electron = electron;
+                // 使用完销毁require,确保后面内容正常运行
+                window.require = undefined;
+                window.module = undefined;
+            }catch(e){}
+        </script>
+        <script src="js/notecontroller.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/editormd.js"></script>  
+        <script src="js/index.js"></script> 
+    </body>
+</html>

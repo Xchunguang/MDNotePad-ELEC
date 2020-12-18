@@ -1,0 +1,29 @@
+{
+  "name": "md-notepad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webbuild": "nodemon -e ts --watch ./ --exec webpack",
+    "start": "electron . --inspect=9229"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "8.1.1",
+    "nodemon": "^2.0.6",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.8.4",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^4.2.0",
+    "electron-packager": "^14.2.1",
+    "asar": "^3.0.0"
+  },
+  "dependencies": {
+    "@types/request": "^2.48.5",
+    "iconv-lite": "^0.6.2",
+    "request": "^2.88.2"
+  }
+}
