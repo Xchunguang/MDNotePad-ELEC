@@ -5,7 +5,7 @@ export default class Status {
     path: string;
     text: string; // TODO 大文件如何优化处理
     edit: boolean; // 是否正在编辑
-    encoding="utf8"
+    encoding="utf-8"
     constructor(path?:string){
         this.path = path;
         this.edit = false;
@@ -17,7 +17,9 @@ export default class Status {
     }
     update(text: string){
         this.text = text;
-        this.edit = true;
+        if(text && text.length > 0){
+            this.edit = true;
+        }
     }
     save(path: string, text: string){
         this.path = path;
@@ -63,6 +65,6 @@ export default class Status {
         this.text = "";
         this.edit = false;
         this.path = "";
-        this.encoding = "utf8";
+        this.encoding = "utf-8";
     }
 }

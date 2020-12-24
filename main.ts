@@ -15,7 +15,7 @@ let createWindow = function() {
       }
     })
     mainWindow.loadFile('./render/pages/index.html')
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 
     status = new Status();
     initMessage(status, mainWindow);

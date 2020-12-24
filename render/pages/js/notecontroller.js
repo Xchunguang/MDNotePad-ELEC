@@ -28,9 +28,6 @@
                 if(!result.canceled){
                     let savePath = result.filePath;
                     let html = getHtml();
-                    let prefix = "<!DOCTYPE html><html><body><head> <meta charset='utf-8'/><title>MDNotePad</title></head>";
-                    let end = "</body></html>";
-                    html = prefix + html + end;
                     ipcRenderer.sendSync('send-mes', {type: 'exportHTML', payload: {path: savePath, html: html}});
                 }
             })

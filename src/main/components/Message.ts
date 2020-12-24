@@ -75,6 +75,10 @@ export function initMessage(status: Status, win: BrowserWindow){
                 break;
             case "exportHTML": 
                 let {path, html} = payload;
+                let css = FileUtil.readFileSync(app.getAppPath() + '/src/main/components/theme/markdown.css');
+                let prefix = `<!DOCTYPE html><html><body><head> <meta charset='utf-8'/><title>MDNotePad</title><style>${css}</style></head>`;
+                let end = "</body></html>";
+                html = prefix + html + end;
                 FileUtil.writeFileSync(path, html);
                 break;
             case "createNew":
